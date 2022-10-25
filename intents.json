@@ -74,7 +74,7 @@
         {
                 "tag":"installing_lockdown_browser",
                 "patterns":["How do I install lock down browser?", "How do I get a link to install lockdown browser?"],
-                "responses":["use tthe following link:https://download.respondus.com/lockdown/download.php?id=752"],
+                "responses":["use tthe following link: <a>https://download.respondus.com/lockdown/download.php?id=752</a>"],
                 "context": [""]
         },
         {
