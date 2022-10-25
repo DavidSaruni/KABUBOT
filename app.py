@@ -10,8 +10,8 @@ from nltk.stem import WordNetLemmatizer
 import nltk
 nltk.download('popular')
 lemmatizer = WordNetLemmatizer()
-model = load_model('model.h5')
-intents = json.loads(open('data.json').read())
+model = load_model('model.kabu')
+intents = json.loads(open('intents.json', "r+", encoding="utf-8").read())
 words = pickle.load(open('texts.pkl', 'rb'))
 classes = pickle.load(open('labels.pkl', 'rb'))
 
