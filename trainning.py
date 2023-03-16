@@ -15,10 +15,10 @@ words=[]
 classes = []
 documents = []
 ignore_words = ['?', '!']
-with open('intents.json', "r+", encoding="utf-8") as json_data:
+with open('intents.json', "r+", encoding="UTF-8") as json_data:
   intents = json.load(json_data)
-#data_file = open('data.json').read()
-#intents = json.loads(data_file)
+# data_file = open('intents.json').read()
+# intents = json.loads(data_file)
 
 
 for intent in intents['intents']:
@@ -73,7 +73,7 @@ for doc in documents:
     training.append([bag, output_row])
 # shuffle our features and turn into np.array
 random.shuffle(training)
-training = np.array(training)
+training = np.array(training,dtype=object)
 # create train and test lists. X - patterns, Y - intents
 train_x = list(training[:,0])
 train_y = list(training[:,1])
@@ -95,6 +95,7 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 
 #fitting and saving the model 
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save('model.kabu', hist)
+model.save('model.counsellor', hist)
 
 print("model created")
+

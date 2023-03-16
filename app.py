@@ -10,7 +10,7 @@ from nltk.stem import WordNetLemmatizer
 import nltk
 nltk.download('popular')
 lemmatizer = WordNetLemmatizer()
-model = load_model('model.kabu')
+model = load_model('model.counsellor')
 intents = json.loads(open('intents.json', "r+", encoding="utf-8").read())
 words = pickle.load(open('texts.pkl', 'rb'))
 classes = pickle.load(open('labels.pkl', 'rb'))
@@ -95,3 +95,5 @@ def get_bot_response():
 if __name__ == "__main__":
     open_browser()
     app.run()
+
+
